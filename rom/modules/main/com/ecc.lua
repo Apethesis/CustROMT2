@@ -48,7 +48,7 @@ local sha256 = (function()
     local bnot    = bit32 and bit32.bnot or bit.bnot
     local bxor    = bit32 and bit32.bxor or bit.bxor
     local blshift = bit32 and bit32.lshift or bit.blshift
-    local upack   = table.  unpack
+    local upack   = table.unpack
 
     local function rrotate(n, b)
         local s = n/(2^b)
