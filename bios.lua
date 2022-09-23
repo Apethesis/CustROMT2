@@ -106,7 +106,7 @@ function rc.sleep(time, no_term)
 end
 
 function rc.version()
-  return string.format("Recrafted %d.%d.%d",
+  return string.format("Recrafted %d.%d.%d (CustROM)",
     rc._VERSION.major, rc._VERSION.minor, rc._VERSION.patch)
 end
 
