@@ -13,13 +13,13 @@ if settings.get("motd.enable") == nil then
 end
 
 textutils.coloredPrint(colors.yellow, string.format("Recrafted %d.%d.%d".."-"..string.gsub(string.lower(_VERSION),"%s+","").." (tty"..(thread.getCurrentTab() or 0)..")", rc._VERSION.major, rc._VERSION.minor, rc._VERSION.patch), colors.white)
+
+thread.vars().parentShell = thread.id()
+shell.init()
 -- Show MOTD
 if settings.get("motd.enable") then
   shell.run("motd")
 end
-
-thread.vars().parentShell = thread.id()
-shell.init()
 
 if not shell.__has_run_startup then
   shell.__has_run_startup = true
