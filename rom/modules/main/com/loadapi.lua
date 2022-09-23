@@ -1,4 +1,5 @@
 local expect = require("cc.expect")
+local fs = require("fs")
 
 local function loadAPI(_sPath)
     expect(1, _sPath, "string")

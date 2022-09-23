@@ -6,6 +6,15 @@
 ]]
 
 local EXPECT = require("cc.expect").expect
+local os = require("os")
+local rc = require("rc")
+local fs = require("fs")
+local window = require("window")
+local term = require("term")
+local http = require("http")
+local textutils = require("textutils")
+os.pullEvent = rc.pullEvent
+os.pullEventRaw = rc.pullEventRaw
 
 local SEPARATION_CHAR = 0x0A
 local INT_BYTE_OFFSET = 0x30

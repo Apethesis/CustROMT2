@@ -13,6 +13,11 @@
 -- Slightly better integer multiplication and squaring
 -- Fix global variable declarations in modQ division and verify() (no security concerns)
 -- Small tweaks from SquidDev's illuaminate (https://github.com/SquidDev/illuaminate/)
+local os = require("os")
+local rc = require("rc")
+local fs = require("fs")
+os.pullEvent = rc.pullEvent
+os.pullEventRaw = rc.pullEventRaw
 
 local byteTableMT = {
     __tostring = function(a) return string.char(unpack(a)) end,
@@ -43,7 +48,7 @@ local sha256 = (function()
     local bnot    = bit32 and bit32.bnot or bit.bnot
     local bxor    = bit32 and bit32.bxor or bit.bxor
     local blshift = bit32 and bit32.lshift or bit.blshift
-    local upack   = unpack
+    local upack   = table.  unpack
 
     local function rrotate(n, b)
         local s = n/(2^b)

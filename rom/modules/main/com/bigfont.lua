@@ -19,6 +19,15 @@ local b = shell and {} or (_ENV or getfenv())
 b.versionName = "Bigfont By Wojbie"
 b.versionNum = 5.003 --2021-07-21
 b.doc = {}
+local os = require("os")
+local rc = require("rc")
+local fs = require("fs")
+local window = require("window")
+local term = require("term")
+local http = require("http")
+local textutils = require("textutils")
+os.pullEvent = rc.pullEvent
+os.pullEventRaw = rc.pullEventRaw
 
 local expect, field if require then expect, field = require "cc.expect".expect, require "cc.expect".field else local ok, did = pcall(dofile,"rom/modules/main/cc/expect.lua") if ok then field, expect = did.field, did.expect else field, expect = function() end, function() end end end
 

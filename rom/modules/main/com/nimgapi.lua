@@ -10,6 +10,13 @@
 -------------------------------------------------------
 -------------------------------------------------------
 local expect = require("cc.expect").expect
+local os = require("os")
+local rc = require("rc")
+local fs = require("fs")
+local http = require("http")
+local textutils = require("textutils")
+os.pullEvent = rc.pullEvent
+os.pullEventRaw = rc.pullEventRaw
 local index = {}
 local indexAnimate = {}
 local indexBuffer = {}

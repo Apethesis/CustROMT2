@@ -1,5 +1,14 @@
 local api = {}
 local functable = {}
+local os = require("os")
+local rc = require("rc")
+local fs = require("fs")
+local window = require("window")
+local term = require("term")
+local http = require("http")
+local textutils = require("textutils")
+os.pullEvent = rc.pullEvent
+os.pullEventRaw = rc.pullEventRaw
 
 -- Just defining some useful functions
 local function to_blit(c)

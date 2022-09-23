@@ -36,6 +36,15 @@
 local e = {}
 local t = {}
 local a = require("cc.expect").expect
+local os = require("os")
+local rc = require("rc")
+local fs = require("fs")
+local window = require("window")
+local term = require("term")
+local http = require("http")
+local textutils = require("textutils")
+os.pullEvent = rc.pullEvent
+os.pullEventRaw = rc.pullEventRaw
 function e.fill(o, i, n, s, h)
     a(1, o, "string")
     a(2, i, "number")
